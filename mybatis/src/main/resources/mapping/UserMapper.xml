@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.UserMapper">
+
+    <!-- Insert a user -->
+    <insert id="insert" parameterType="user">
+        insert into user(name,age) values(#{name},#{age})
+    </insert>
+
+    <!-- according to id Delete students -->
+    <delete id="delete" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+    <!-- according to id Modifying Student Information -->
+    <update id="update" parameterType="user">
+        update user set name=#{name},age=#{age} where id=#{id}
+    </update>
+
+    <!-- according to id query -->
+    <select id="getById" parameterType="int" resultType="user">
+        select * from user where id=#{id}
+    </select>
+
+    <!-- Query all -->
+    <select id="list" parameterType="int" resultType="user">
+        select * from user
+    </select>
+
+</mapper>

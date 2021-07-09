@@ -22,8 +22,8 @@ import org.springframework.stereotype.Component;
 
 import javax.ws.rs.core.MediaType;
 
-@SpringBootApplication(exclude = {IntegrationAutoConfiguration.class, WebSocketServletAutoConfiguration.class, AopAutoConfiguration.class, OAuth2ResourceServerAutoConfiguration.class, EmbeddedWebServerFactoryCustomizerAutoConfiguration.class })
-@ComponentScan
+@SpringBootApplication(exclude = { WebSocketServletAutoConfiguration.class, AopAutoConfiguration.class, OAuth2ResourceServerAutoConfiguration.class, EmbeddedWebServerFactoryCustomizerAutoConfiguration.class })
+@ComponentScan(basePackages = "com.baeldung.camel")
 public class Application {
 
     @Value("${server.port}")
